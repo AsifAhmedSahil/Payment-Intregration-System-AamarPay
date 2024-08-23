@@ -3,8 +3,9 @@ import { paymentServices } from "./payment.services";
 
 
 const confirmationController = async(req:Request,res:Response) =>{
-    const result = await paymentServices.confirmationService(req.query.transactionId as string)
-    res.send(`<h1>Payment Success</h1>`)
+    const {transactionId,status} = req.query
+    const result = await paymentServices.confirmationService(transactionId as string,status as string)
+    res.send(result)
 }
 
 export const paymentControler = {

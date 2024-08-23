@@ -35,6 +35,7 @@ export default function CheckOutPage() {
       const res = await createOrder(data).unwrap();
       if (res.success) {
         console.log(res)
+        window.location.href = res.data.payment_url
       } else {
         console.error('Order creation failed:', res.message);
       }

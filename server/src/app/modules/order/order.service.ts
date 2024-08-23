@@ -1,3 +1,4 @@
+import { initiatePayment } from '../payments/payment.utils';
 import Product from '../product/product.model';
 import Order from './order.model';
 
@@ -34,6 +35,9 @@ const createOrder = async (orderData: any) => {
     });
 
     await order.save();
+
+    // payment
+    initiatePayment()
 
     return order;
 };

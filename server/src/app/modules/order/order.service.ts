@@ -49,7 +49,7 @@ const createOrder = async (orderData: any) => {
     const paymentInfo = await initiatePayment(paymentData)
     console.log(paymentInfo)
 
-    return order;
+    return paymentInfo;
 };
 
 
